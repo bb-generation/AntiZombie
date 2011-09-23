@@ -1,0 +1,5 @@
+name: AntiZombie
+main: net.bbgen.mc.antizombie.AntiZombie
+version: 0.1
+description: Allows to disable spawning creatures in certain areas
+author: Bernhard Eder (mc@bbgen.net)

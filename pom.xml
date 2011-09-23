@@ -1,0 +1,23 @@
+<project>
+  <!-- model version is always 4.0.0 for Maven 2.x POMs -->
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <!-- project coordinates, i.e. a group of values which
+       uniquely identify this project -->
+ 
+  <groupId>net.bbgen.mc.antizombie</groupId>
+  <artifactId>AntiZombie</artifactId>
+  <version>1.0</version>
+ 
+  <!-- library dependencies -->
+ 
+  <dependencies>
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>bukkit</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency> 
+  </dependencies>
+</project>
