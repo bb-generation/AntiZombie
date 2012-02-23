@@ -7,15 +7,22 @@
  
   <groupId>net.bbgen.mc.antizombie</groupId>
   <artifactId>AntiZombie</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
  
   <!-- library dependencies -->
+
+  <repositories>
+    <repository>
+      <id>repobo-snap</id>
+      <url>http://repo.bukkit.org/content/groups/public</url>
+    </repository>
+  </repositories>
  
   <dependencies>
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.1-R5-SNAPSHOT</version>
       <type>jar</type>
       <scope>compile</scope>
     </dependency> 
