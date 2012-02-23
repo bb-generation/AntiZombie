@@ -41,7 +41,6 @@ public class AntiZombie extends JavaPlugin
      */
     //protected static Configuration config;
     protected FileConfiguration config;
-    private static Logger logger = Logger.getLogger("AntiZombie");
     private CreatureSpawnListener creatureSpawnListener = new CreatureSpawnListener();
 
     @Override
@@ -49,9 +48,8 @@ public class AntiZombie extends JavaPlugin
     {
         config = getConfig();
         config.options().copyDefaults(true);
-        logger.setLevel(Level.FINE);
 
-        logger.info("Loading AntiZombie");
+        getLogger().info("Loading AntiZombie");
 
         ConfigurationSection area = config.getConfigurationSection("area");
         
@@ -59,7 +57,7 @@ public class AntiZombie extends JavaPlugin
         if(area != null)
             keys = area.getKeys(false);
         if(keys == null)
-            logger.info("No disabled areas found.");
+            getLogger().info("No disabled areas found.");
         else
         {
             for(String s : keys)
@@ -69,7 +67,7 @@ public class AntiZombie extends JavaPlugin
                     creatureSpawnListener.addDisabledArea(loadArea(area.getConfigurationSection(s)));
                 } catch (AntiZombieException e)
                 {
-                    logger.warning("Could not load area: " + e.getMessage());
+                    getLogger().warning("Could not load area: " + e.getMessage());
                 }
             }
         }
@@ -116,7 +114,7 @@ public class AntiZombie extends JavaPlugin
         if(world == null)
             throw new AntiZombieException("World "+worldString+" not found. Available worlds: " + getServer().getWorlds());
 
-        logger.fine("Loaded disabled area. World: " + world.getName() + ". Entity: " + entities + ". Location0:" + location0.toString() + " Location1: " + location1.toString());
+        getLogger().fine("Loaded disabled area. World: " + world.getName() + ". Entity: " + entities + ". Location0:" + location0.toString() + " Location1: " + location1.toString());
         area.setLocations(location0, location1);
         return area;
     }
