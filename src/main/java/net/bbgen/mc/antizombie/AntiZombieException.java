@@ -14,7 +14,6 @@
 
 package net.bbgen.mc.antizombie;
 
-
 public class AntiZombieException extends Exception
 {
     private static final long serialVersionUID = -3551518601897169857L;

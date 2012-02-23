@@ -53,6 +53,9 @@ public class DisabledArea
     {
         if(checkCreatures && !creatures.contains(creatureType))
             return false;
+        
+        if(!location0.getWorld().equals(location.getWorld()))
+            return false;
 
         if(!isIn(location0.getBlockX(), location1.getBlockX(), location.getBlockX()))
             return false;

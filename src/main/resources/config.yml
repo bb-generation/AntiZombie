@@ -1,0 +1,24 @@
+#area:
+#  area0:
+#    entities: [PigZombie]
+#    x0: -500
+#    y0: 0
+#    z0: -500
+#    x1: 500
+#    y1: 128
+#    z1: 500
+#    world: world_nether
+#  area1:
+#    entities: [Ghast]
+#    x0: -500
+#    y0: 64
+#    z0: -500
+#    x1: 500
+#    y1: 128
+#    z1: 500
+#    world: world_nether
+#  area2:
+#    entities: [*]
+#    world: world
+    
+    

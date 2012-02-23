@@ -17,10 +17,11 @@ package net.bbgen.mc.antizombie;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
-import org.bukkit.event.entity.EntityListener;
 
-public class CreatureSpawnListener extends EntityListener
+public class CreatureSpawnListener implements Listener
 {
     public CreatureSpawnListener()
     {
@@ -31,8 +32,8 @@ public class CreatureSpawnListener extends EntityListener
     {
         disabledAreas.add(disabledArea);
     }
-
-    @Override
+    
+    @EventHandler
     public void onCreatureSpawn(CreatureSpawnEvent event)
     {
         for(DisabledArea area : disabledAreas)
