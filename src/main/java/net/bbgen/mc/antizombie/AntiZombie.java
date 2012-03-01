@@ -37,7 +37,6 @@ public class AntiZombie extends JavaPlugin
      * 
      * The following configs are being used: area: area0: entity: [...] (list of entities. if you want to disable all: [*]) x0: lower X boundary (optional) y0: lower Y boundary (optional) z0: lower Z boundary (optional) x1: upper X boundary (optional) y1: upper Y boundary (optional) z1: upper Z boundary (optional) world: world name (optional)
      */
-    //protected static Configuration config;
     protected FileConfiguration config;
     private CreatureSpawnListener creatureSpawnListener = new CreatureSpawnListener();
 
@@ -70,7 +69,6 @@ public class AntiZombie extends JavaPlugin
             }
         }
 
-        //getServer().getPluginManager().registerEvent(Event.Type.CREATURE_SPAWN, creatureSpawnListener, Event.Priority.Normal, this);
         getServer().getPluginManager().registerEvents(creatureSpawnListener, this);
     }
 
@@ -120,8 +118,6 @@ public class AntiZombie extends JavaPlugin
     @Override
     public void onDisable()
     {
-        // currently the plugin does not change any config so saving it back is not needed.
-        // config.save();
         saveConfig();
     }
 
