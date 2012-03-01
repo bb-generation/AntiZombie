@@ -1,6 +1,7 @@
 #area:
 #  area0:
-#    entities: [PigZombie]
+#    entities:
+#    - PigZombie
 #    x0: -500
 #    y0: 0
 #    z0: -500
@@ -9,7 +10,8 @@
 #    z1: 500
 #    world: world_nether
 #  area1:
-#    entities: [Ghast]
+#    entities:
+#    - Ghast
 #    x0: -500
 #    y0: 64
 #    z0: -500
@@ -20,5 +22,12 @@
 #  area2:
 #    entities: [*]
 #    world: world
-    
-    
+#  area3:
+#    entities:
+#    - PigZombie
+#    world: world_nether
+#    materials:
+#    - Cobblestone
+#    - Stone
+#    - Rail
+#    - Powered_Rail

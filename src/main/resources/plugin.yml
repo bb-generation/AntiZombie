@@ -1,6 +1,6 @@
 name: AntiZombie
 main: net.bbgen.mc.antizombie.AntiZombie
-version: 1.1
+version: 1.2
 description: Allows to disable spawning creatures in certain areas
 author: Bernhard Eder (mc@bbgen.net)
 softdepend: [Multiverse-Core]
