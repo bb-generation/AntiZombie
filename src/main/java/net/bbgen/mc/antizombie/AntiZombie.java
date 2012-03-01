@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -45,8 +46,6 @@ public class AntiZombie extends JavaPlugin
     {
         config = getConfig();
         config.options().copyDefaults(true);
-
-        getLogger().info("Loading AntiZombie");
 
         ConfigurationSection area = config.getConfigurationSection("area");
         
@@ -105,6 +104,15 @@ public class AntiZombie extends JavaPlugin
             if(creatureType == null)
                 throw new AntiZombieException("Creature Type " + entity + " not found.");
             area.addCreature(creatureType);
+        }
+        
+        List<String> materials = section.getStringList("materials");
+        for(String smaterial : materials)
+        {
+            Material material = Material.getMaterial(smaterial.toUpperCase());
+            if(material == null)
+                throw new AntiZombieException("Material Type " + smaterial + " not found.");
+            area.addMaterial(material);
         }
 
         if(world == null)

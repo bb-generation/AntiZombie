@@ -18,8 +18,9 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.entity.CreatureType;
+import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 
 public class DisabledArea
@@ -29,6 +30,11 @@ public class DisabledArea
     {
         location0 = new Location(world, 0, 0, 0);
         location1 = new Location(world, 0, 0, 0);
+    }
+    
+    public void addMaterial(Material material)
+    {
+        materials.add(material);
     }
 
     public void addCreature(EntityType creature)
@@ -66,8 +72,35 @@ public class DisabledArea
 
         if(!isIn(location0.getBlockY(), location1.getBlockY(), location.getBlockY()))
             return false;
+        
+        if(!matchesMaterial(location))
+            return false;
 
         return true;
+    }
+
+    private boolean matchesMaterial(Location location)
+    {
+        if(materials.isEmpty())
+            return true;
+        
+        if(checkLocation(location))
+            return true;
+        if(checkLocation(location.add(0, -1.0, 0)))
+            return true;
+
+        
+        return false;
+    }
+    
+    private boolean checkLocation(Location location)
+    {
+        Block blockBelow = location.getBlock();
+        
+        if(materials.contains(blockBelow.getType()))
+            return true;
+        
+        return false;
     }
 
     public void setAllCreatures()
@@ -95,6 +128,7 @@ public class DisabledArea
 
     private Location location0;
     private Location location1;
+    private Set<Material> materials = new TreeSet<Material>();
 
     private Set<EntityType> creatures = new TreeSet<EntityType>();
 

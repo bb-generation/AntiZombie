@@ -17,7 +17,6 @@ package net.bbgen.mc.antizombie;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.bukkit.entity.CreatureType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
