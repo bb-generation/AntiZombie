@@ -17,6 +17,7 @@ package net.bbgen.mc.antizombie;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.bukkit.entity.CreatureType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -38,7 +39,7 @@ public class CreatureSpawnListener implements Listener
     {
         for(DisabledArea area : disabledAreas)
         {
-            if(area.matches(event.getLocation(), event.getCreatureType()))
+            if(area.matches(event.getLocation(), event.getEntity().getType()))
             {
                 event.setCancelled(true);
                 break;

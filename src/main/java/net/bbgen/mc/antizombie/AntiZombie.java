@@ -16,14 +16,12 @@ package net.bbgen.mc.antizombie;
 
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.CreatureType;
+import org.bukkit.entity.EntityType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -105,7 +103,7 @@ public class AntiZombie extends JavaPlugin
             area.setAllCreatures();
         for(String entity : entities)
         {
-            CreatureType creatureType = CreatureType.fromName(entity);
+            EntityType creatureType = EntityType.fromName(entity);
             if(creatureType == null)
                 throw new AntiZombieException("Creature Type " + entity + " not found.");
             area.addCreature(creatureType);

@@ -20,6 +20,7 @@ import java.util.TreeSet;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.CreatureType;
+import org.bukkit.entity.EntityType;
 
 public class DisabledArea
 {
@@ -30,12 +31,12 @@ public class DisabledArea
         location1 = new Location(world, 0, 0, 0);
     }
 
-    public void addCreature(CreatureType creature)
+    public void addCreature(EntityType creature)
     {
         creatures.add(creature);
     }
 
-    public DisabledArea(Location location0, Location location1, CreatureType creatureType)
+    public DisabledArea(Location location0, Location location1, EntityType creatureType)
     {
         this.location0 = location0;
         this.location1 = location1;
@@ -49,7 +50,7 @@ public class DisabledArea
         this.location1 = location1;
     }
 
-    public boolean matches(Location location, CreatureType creatureType)
+    public boolean matches(Location location, EntityType creatureType)
     {
         if(checkCreatures && !creatures.contains(creatureType))
             return false;
@@ -95,6 +96,6 @@ public class DisabledArea
     private Location location0;
     private Location location1;
 
-    private Set<CreatureType> creatures = new TreeSet<CreatureType>();
+    private Set<EntityType> creatures = new TreeSet<EntityType>();
 
 }
