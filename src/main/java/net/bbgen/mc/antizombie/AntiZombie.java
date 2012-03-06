@@ -46,6 +46,7 @@ public class AntiZombie extends JavaPlugin
     {
         config = getConfig();
         config.options().copyDefaults(true);
+        saveConfig();
 
         ConfigurationSection area = config.getConfigurationSection("area");
         
@@ -126,7 +127,6 @@ public class AntiZombie extends JavaPlugin
     @Override
     public void onDisable()
     {
-        saveConfig();
     }
 
 }
